@@ -6,7 +6,6 @@ canvas.width = screen.width - 10;
 canvas.height = screen.height - Deployimage.height - 200;
 context.strokeRect(0, 0, canvas.width, canvas.height);
 
-
 game.mouse = {};
 game.selectedRegionId = -1;
 
@@ -25,8 +24,8 @@ game.Render.DrawRegion = function DrawRegion(current){
 	context.fillRect(current.pos.x,current.pos.y,current.size.x,current.size.y);
 } 
 game.Render.DrawAllRegion = function DrawRegion(){
-	for (var i = 0 ; i < game.regionList.length; i ++) {
-		game.Render.DrawRegion (game.regionList[i]);
+	for ( i in game.regionList ) {
+		game.Render.DrawRegion (i.value);
 	}
 } 
 game.Render.Draw = function Draw() {
@@ -40,9 +39,9 @@ game.squareCollision = function squareCollision (o1,o2) {
 	return o1.pos.x + o1.size.x > o2.pos.x && o1.pos.y + o1.size.y > o2.pos.y && o2.pos.x + o2.size.x > o1.pos.x && o2.pos.y + o2.size.y > o1.pos.y;
 }
 game.FindRegionCollided = function FindRegionCollided (mouse){
-	for ( var i = 0 ; i < game.regionList.length ; i ++ ) {
-		if (game.squareCollision ( { pos: {x:mouse.x , y:mouse.y},size: {0,0} } , game.regionList[i] ) ) {
-			return game.regionList[i].id;
+	for ( i in game.regionList ) {
+		if (game.squareCollision ( { pos: { x:mouse.x , y:mouse.y } , size: {0,0} } , i.value ) ) {
+			return i.key;
 		}
 	}
 	return -1;
