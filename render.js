@@ -1,11 +1,11 @@
 var canvas = document.getElementById("mainCanvas");
 var Deployimage = document.getElementById("Deploy");
 var context = canvas.getContext("2d");
-<<<<<<< HEAD
+
 canvas.width = screen.width - 10;
 canvas.height = screen.height - Deployimage.height - 200;
 context.strokeRect(0, 0, canvas.width, canvas.height);
-=======
+
 
 game.mouse = {};
 game.selectedRegionId = -1;
@@ -60,4 +60,3 @@ window.addEventListener("mouseup", function (args) {
 
 
 game.Render.Draw();
->>>>>>> a36fc83a1d9f64d5cda5310313bc885cd4f2f47a
