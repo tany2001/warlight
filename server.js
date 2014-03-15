@@ -8,11 +8,27 @@ app.get("/", function (req, res) { res.sendfile(__dirname + "/index.html"); });
 app.get("/client.js", function (req, res) { res.sendfile(__dirname + "/client.js"); });
 app.get("/render.js", function (req, res) { res.sendfile(__dirname + "/render.js"); });
 
+var users = [];
+
+function addUser(socket)
+{
+	return true;
+}
+
+function removeUser(socket)
+{
+
+}
+
 io.sockets.on("connection", function (socket)
 {
-	socket.emit("news", { hello: "world" });
-	socket.on("my other event", function (data)
+	socket.vars = {};
+	socket.vars.logged = false;
+
+	socket.on("login", function (data)
 	{
-		console.log(data);
+		if(!socket.vars.logged)
+			if(addUser(socket))
+				socket.emit("logged", {text: "You logged OK!"});
 	});
 });
