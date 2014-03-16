@@ -1,9 +1,9 @@
-var socket = io.connect("http://localhost");
+//var socket = io.connect("http://localhost");
 
-var nickname;
-while(nickname == undefined || nickname == "")
+//var nickname;
+//while(nickname == undefined || nickname == "")
 
-socket.emit("login", {name: nickname});
+//socket.emit("login", {name: nickname});
 
 var Game = {};
 Game.regionList = [];
@@ -22,9 +22,10 @@ Game.Region = function (px, py)
 	this.owner = "";
 	this.id = "";
 }
-
+/*
 socket.on("news", function (data)
 {
 	console.log(data);
 	socket.emit("my other event", { my: "data" });
 });
+*/

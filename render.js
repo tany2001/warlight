@@ -9,6 +9,7 @@ context.strokeRect(0, 0, canvas.width, canvas.height);
 
  Game.mouse = {};
  Game.selectedRegionId = -1;
+ Game.Render = {};
  Game.Render.DrawRegion = function DrawRegion(current){
 	
  	context.globalAlpha = 1;
@@ -34,7 +35,7 @@ context.strokeRect(0, 0, canvas.width, canvas.height);
  	Game.Render.DrawAllRegion();
 	
 
- 	requestAnimationFrame();
+ 	requestAnimationFrame(Game.Render.Draw);
  }
  Game.squareCollision = function squareCollision (o1,o2) {
  	return o1.pos.x + o1.size.x > o2.pos.x && o1.pos.y + o1.size.y > o2.pos.y && o2.pos.x + o2.size.x > o1.pos.x && o2.pos.y + o2.size.y > o1.pos.y;
@@ -47,8 +48,6 @@ context.strokeRect(0, 0, canvas.width, canvas.height);
  	}
  	return -1;
  }
-	requestAnimationFrame();
-}
 Game.squareCollision = function squareCollision (o1,o2) {
 	return o1.pos.x + o1.size.x > o2.pos.x && o1.pos.y + o1.size.y > o2.pos.y && o2.pos.x + o2.size.x > o1.pos.x && o2.pos.y + o2.size.y > o1.pos.y;
 }
