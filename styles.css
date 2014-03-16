@@ -1,0 +1,14 @@
+body {
+	background-color:black;
+}
+
+#cnvs {
+
+	margin:0px 0 50px 0px;
+	display: inline;
+
+}
+
+#cnvs img {
+	float: left;
+}
