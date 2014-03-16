@@ -40,7 +40,7 @@ Game.squareCollision = function squareCollision (o1,o2) {
 }
 Game.FindRegionCollided = function FindRegionCollided (mouse){
 	for ( var i = 0 ; i < Game.regionList.length ; i ++ ) {
-		if (Game.squareCollision ( { pos: {x:mouse.x , y:mouse.y},size: {0,0} } , Game.regionList[i] ) ) {
+		if (Game.squareCollision ( { pos: {x:mouse.x , y:mouse.y},size: {x:0,y:0} } , Game.regionList[i] ) ) {
 			return Game.regionList[i].id;
 		}
 	}
