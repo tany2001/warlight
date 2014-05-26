@@ -1,0 +1,32 @@
+{
+  "name": "Warlight",
+  "description": "Small clone of the original warlight game.",
+  "version": "0.01",
+  "maintainers":
+  {
+    "name": "Nikolai Rangelov"
+  },
+  "contributors": [
+    {
+      "name": "Viktor Terziev",
+    },
+    {
+      "name": "Stanislav Nikolov",
+    },
+    {
+      "name": "Hristo Stoyanov"
+    }
+  ],
+  "dependencies":
+  {
+    "express": "4.3.1",
+    "socket.io": "0.9.17"
+  },
+  "repositories":
+  [
+    {
+      "type": "git",
+      "url": "https://github.com/tany2001/warlight.git"
+    }
+  ]
+}
